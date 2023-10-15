@@ -11,7 +11,7 @@ export default async function DatasetExplorer({
 
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery([`dataset_by_slug_${params.dataset}`], () =>
-    GraphQL(DATASET_BY_SLUG , { dataset_slug: params.dataset})
+    GraphQL('datasets', DATASET_BY_SLUG , { dataset_slug: params.dataset})
   );
   const dehydratedState = dehydrate(queryClient);
 

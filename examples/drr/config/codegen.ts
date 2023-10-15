@@ -3,7 +3,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 import { gqlConfig } from './site';
 
 const config: CodegenConfig = {
-  schema: gqlConfig.url,
+  schema: gqlConfig.analytics,
   documents: 'config/**/*.ts',
   ignoreNoDocuments: true,
   generates: {

@@ -8,11 +8,15 @@ import { gqlConfig } from '@/config/site';
 // create a wrapper function for graphql-request
 // that will be used by react-query
 export async function GraphQL<TResult, TVariables>(
+  type:string,
   document: TypedDocumentNode<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
+  
 ) {
   const data = await request(
-    gqlConfig.url,
+    gqlConfig[type],
+    
+
     document,
     {
       ...variables,

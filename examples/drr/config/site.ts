@@ -32,8 +32,11 @@ export const mapPosition: {
 
 export const locales = ['en', 'hi'];
 
-export const gqlConfig = {
-  url: 'https://opub-backend.civicdatalab.in/graphql',
+export const gqlConfig: {
+  [key: string]: string;
+} = {
+  datasets: 'https://opub-backend.civicdatalab.in/graphql',
+  analytics: 'http://13.127.173.177:8000/graphql'
 };
 
 

@@ -7,11 +7,13 @@ import { AnalyticsDashboardSidebar } from './analytics-sidebar';
 import styles from './styles.module.scss';
 import { Text } from 'opub-ui';
 
+
 interface DashboardLayoutProps {
   children?: React.ReactNode;
 }
 
 export function AnalyticsDashboardLayout({ children }: DashboardLayoutProps) {
+
   return (
     <React.Fragment>
       <div className='p-8'>
@@ -23,11 +25,17 @@ export function AnalyticsDashboardLayout({ children }: DashboardLayoutProps) {
           'md:flex md:gap-1'
         )}
       >
+
         <AnalyticsDashboardSidebar />
+ 
+
         <main className={cn(styles.Main, 'md:max-w-[calc(100vw_-_260px)]')}>
           {children}
         </main>
       </div>
     </React.Fragment>
   );
+
+
+  
 }
