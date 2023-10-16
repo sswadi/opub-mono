@@ -1,23 +1,25 @@
-// 'use client';
-
-import { Content } from './components/analytics-layout';
 import React from 'react';
-import { INDICATORS_QUERY } from '@/config/graphql/queries';
-import { GraphQL, getQueryClient } from '@/lib/api';
 import { Hydrate, dehydrate } from '@tanstack/react-query';
 
-export default async function Home(){
+import { ANALYTICS_TABLE_DATA , ANALYTICS_INDICATORS} from '@/config/graphql/analaytics-queries';
+import { GraphQL, getQueryClient } from '@/lib/api';
+import { Content } from './components/analytics-layout';
 
-
+export default async function Home() {
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery([`indicators`], () =>
-    GraphQL('analytics', INDICATORS_QUERY)
+  await queryClient.prefetchQuery([`district_table_data`], () =>
+    GraphQL('analytics', ANALYTICS_TABLE_DATA)
   );
 
-  console.log(queryClient);
+//   await queryClient.prefetchQuery([`indicators`], () =>
+//   GraphQL('analytics', ANALYTICS_INDICATORS)
+// );
   const dehydratedState = dehydrate(queryClient);
-
-  return <Content />;
+  return (
+    <Hydrate state={dehydratedState}>
+      <Content />;
+    </Hydrate>
+  );
 }
 
 

@@ -1,10 +1,13 @@
 'use client';
 
-// import React from 'react';
-// import { Checkbox } from 'opub-ui';
+import React from 'react';
+import { Checkbox } from 'opub-ui';
+import { ANALYTICS_INDICATORS} from '@/config/graphql/analaytics-queries';
 
 import { cn } from '@/lib/utils';
 import styles from './AnalyticsDashboard.module.scss';
+import { useQuery } from '@tanstack/react-query';
+import { GraphQL } from '@/lib/api';
 
 // const indicators = [
 //   {
@@ -85,22 +88,17 @@ import styles from './AnalyticsDashboard.module.scss';
 
 //-----------EDITED---------------------------------
 
-import React from 'react';
-import { useQuery } from '@tanstack/react-query';
+
 import { INDICATORS_QUERY } from '@/config/graphql/queries';
-import { GraphQL } from '@/lib/api';
+
 
 
 export function AnalyticsDashboardSidebar() {
 
-  const  {data}  = useQuery([`indicators`], () =>
-    GraphQL('analytics', INDICATORS_QUERY)
-  );
+//   const { data } = useQuery([`indicators`], () =>
+//   GraphQL('analytics', ANALYTICS_INDICATORS)
+// );
 
-  // const indicatorsD  = data;
-  // const explorerData = da;
-  console.log("DATA: ", data);
- 
   return (
     <div className="grid gap-4">
           

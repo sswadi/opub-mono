@@ -36,13 +36,12 @@ export const gqlConfig: {
   [key: string]: string;
 } = {
   datasets: 'https://opub-backend.civicdatalab.in/graphql',
-  analytics: 'http://13.127.173.177:8000/graphql'
+  analytics: 'http://13.127.173.177:8000/graphql',
 };
 
-
 export const elasticSearch = {
-  datasets: 'https://opub-backend.civicdatalab.in/facets/'
-}
+  datasets: 'https://opub-backend.civicdatalab.in/facets/',
+};
 
 export const navbarConfig = {
   homeUrl: '/',
