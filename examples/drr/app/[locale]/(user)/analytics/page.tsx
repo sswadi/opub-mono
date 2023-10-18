@@ -11,9 +11,9 @@ export default async function Home() {
     GraphQL('analytics', ANALYTICS_TABLE_DATA)
   );
 
-//   await queryClient.prefetchQuery([`indicators`], () =>
-//   GraphQL('analytics', ANALYTICS_INDICATORS)
-// );
+  await queryClient.prefetchQuery([`indicators`], () =>
+  GraphQL('analytics', ANALYTICS_INDICATORS)
+);
   const dehydratedState = dehydrate(queryClient);
   return (
     <Hydrate state={dehydratedState}>
@@ -21,6 +21,3 @@ export default async function Home() {
     </Hydrate>
   );
 }
-
-
-
