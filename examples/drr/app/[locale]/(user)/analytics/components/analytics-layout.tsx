@@ -72,7 +72,7 @@ export function Content() {
   return (
     <div className="w-full h-full grid gap-4 grid-rows-2">
       
-      <div className="flex items-start s">
+      <div className="flex flex-col">
       {/* <div className="flex items-start self-stretch"> */}
 
         <div className="flex flex-col items-start self-stretch gap-4">
@@ -135,14 +135,13 @@ export function Content() {
 
         </div>
 
-        <div className="flex flex-row items-start">
-        {/* <div className="flex flex-row items-start self-stretch"> */}
+        <div className="flex flex-row items-start self-stretch">
 
-            {/* <div className='h-140'> */}
+            <div className='h-140'>
 
                 <MapComponent />
 
-            {/* </div> */}
+            </div>
             
 
             <div className='flex flex-col gap-4 w-72 px-3 py-3'>
